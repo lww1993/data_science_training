@@ -46,3 +46,6 @@ references/
 # pictures
 
 pictures/
+
+R/introduction/*.log
+
