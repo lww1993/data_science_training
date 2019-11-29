@@ -21,12 +21,11 @@ nocite: |
 
 \newpage
 
-# 数据科学在商业中的作用
+# Introduction
 
 
 Dream no small dreams for they have no power to
 move the hearts of men.(Johann Wolfgang von Goethe)
-
 
 数据科学在商业中的终极目标是辅助商业决策，提高决策的有效性。
 
@@ -37,11 +36,7 @@ knitr::include_graphics("/Users/alfredlee/Documents/work/data_science_training/p
 
 ```
 
-<!--![数据科学](/Users/alfredlee/Documents/work/data_science_training/pictures/DDD.png)-->
-
-
-\pagebreak
-
+\newpage
 
 # 案例一
 
@@ -102,7 +97,7 @@ R语言是做统计的不二之选。主要基于以下两个理由:
 目前初步计划讲授的内容以"R神"Hadley Wickham的R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. 这本书为主, 网址是https://r4ds.had.co.nz/, 中文版称为"R数据科学".
 
 
-这本书学过后，就可以胜任信息部的基本工作了！培训后会有考试。考试通过可以来信息部工作！我们信息部热烈欢迎！
+这本书学过后，就可以胜任信息部的基本工作了！培训后会有考试。考试通过可以来信息部工作！信息部热烈欢迎！
 
 \newpage
 
@@ -111,6 +106,14 @@ R语言是做统计的不二之选。主要基于以下两个理由:
 1. 笔记本电脑, 内存4G, 最好是8G, 操作系统Windows7以上, 最好是Window10; 并且在其上安装R软件与Rstudio.
 
 2. R for Data Science, 中文版或者英文版，推荐英文版;
+
+\newpage
+
+# 课后作业
+
+安装R及Rstudio.
+
+\newpage
 
 \newpage
 

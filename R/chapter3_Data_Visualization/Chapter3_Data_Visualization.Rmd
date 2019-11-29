@@ -1,0 +1,177 @@
+---
+title: "数据可视化"
+author:
+  - 李伟
+documentclass: ctexart
+output:
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: no
+    toc: yes
+    
+classoption: "hyperref,"
+
+bibliography: myref.bib
+
+nocite: | 
+  @Wickham2016R, @Wickham2016Ggplot2
+
+---
+
+
+\newpage
+
+# 包安装 
+
+首先, 需要安装相应的语言包tidyverse: install.packages(...).
+
+
+```{r, eval=FALSE}
+
+install.packages("tidyverse")
+
+```
+
+其次，我们加载所需的语言包。
+
+```{r package}
+
+library(tidyverse)
+
+```
+
+注意，每个包只需要安装一次，但每次使用前都需要加载。
+
+\pagebreak
+
+# 第一个数据集
+
+第一个数据集来自于ggplot2包中的mpg, 我们可以使用"?mpg"查看相应的帮助文档.
+
+主要的参数如下:
+
+manufacturer: 生产商;
+
+model: 汽车型号;
+
+displ: 发动机排量(L);
+
+year: 上市年份;
+
+cyl: 汽缸数目;
+
+trans: 变速器类型;
+
+drv: 驱动方式;
+
+cty: 在城市一加仑汽油相应的英里数;
+
+hwy: 在高速路一加仑汽油相应的英里数;
+
+fl: 燃油类型;
+
+class: 汽车类型(属于两座车，紧凑型，SUV等)
+
+
+\newpage
+
+# 第一个图
+
+现在，我们用ggplot2回答第一个问题:
+
+是否发动机的排放量越大，其对应的耗油量越大？
+
+\newpage
+
+```{r}
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+```
+
+
+\newpage
+
+ggplot2包的作者给出了一个画图模板:
+
+```{r, eval=FALSE}
+
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+
+```
+
+\newpage
+
+# 课堂小练习
+
+1. mpg有多少行，有多少列?
+
+2. 作出hwy与cyl之间的散点图。
+
+3. 除了上述图，还可以做什么图形来回答刚刚的问题？
+
+\newpage
+
+# 了解偏离点的汽车类型
+
+在刚刚的图中，有几个点与大部分点的趋势是有偏离的。
+
+下面我们看一下是这些点代表的是什么类型的汽车。
+
+```{r}
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(displ, hwy, colour = class))
+
+```
+
+\newpage
+
+```{r}
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(displ, hwy, size = class))
+
+```
+
+\newpage
+
+```{r}
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(displ, hwy, shape = class))
+
+```
+
+\newpage
+
+# 分面技术
+
+如果我们单独看每一种类型的车辆, 其排量与耗油量的关系, 此时可以借助分面技术.
+
+分面技术可以帮助我们针对不同的种类进行作图对比.
+
+```{r}
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+
+```
+
+\newpage
+
+# 参考书目
+
+
+
+
+
+
+
+
+
+
+
